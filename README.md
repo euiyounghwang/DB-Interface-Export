@@ -1,7 +1,7 @@
 # DB-Interface-Export
 <i>Python DB Interface with Prometheus-Export
 
-This is a repository that searches the desired table in the db in the Prometheus-Export application and delivers the record.
+This is a repository that provides to deliver the records to the Prometheus-Export application.
 
 
 ### Using Poetry: Create the virtual environment in the same directory as the project and install the dependencies:
