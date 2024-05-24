@@ -37,3 +37,6 @@ poetry add jaydebeapi
 or you can run this shell script `./create_virtual_env.sh` to make an environment. then go to virtual enviroment using `source .venv/bin/activate`
 
 
+### Service
+- Run this command `./start-start.sh` or python -m uvicorn main:app --reload --host=0.0.0.0 --port=8002 --workers 4
+- Service : http://localhost:8002/docs
