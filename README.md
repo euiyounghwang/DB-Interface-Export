@@ -37,6 +37,35 @@ poetry add jaydebeapi
 or you can run this shell script `./create_virtual_env.sh` to make an environment. then go to virtual enviroment using `source .venv/bin/activate`
 
 
+
+### Register Service
+- sudo service db_es_api status/stop/start/restart
+```bash
+#-- /etc/systemd/system/db_es_api.service
+[Unit]
+Description=DB ES Service
+
+[Service]
+User=devuser
+Group=devuser
+Type=simple
+ExecStart=/bin/bash /home/devuser/db_interface_api/service-start.sh
+ExecStop= /usr/bin/killall db_es_service
+
+[Install]
+WantedBy=default.target
+
+
+# Service command
+sudo systemctl daemon-reload 
+sudo systemctl start db_es_api.service 
+sudo systemctl status db_es_api.service 
+sudo systemctl stop db_es_api.service 
+
+sudo service db_es_api status/stop/start
+```
+
+
 ### Service
 - Run this command `./start-start.sh` or python -m uvicorn main:app --reload --host=0.0.0.0 --port=8002 --workers 4
 - Service : http://localhost:8002/docs
