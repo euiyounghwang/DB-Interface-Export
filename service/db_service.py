@@ -26,7 +26,7 @@ class DBHandler(object):
             print(result_json_value, type(result_json_value))
 
             return json.loads(str(result_json_value).replace("'",'"'))
-        
+    
         except Exception as e:
            return StatusException.raise_exception(str(e))
         
