@@ -58,6 +58,7 @@ WantedBy=default.target
 
 # Service command
 sudo systemctl daemon-reload 
+sudo systemctl enable db_es_api.service
 sudo systemctl start db_es_api.service 
 sudo systemctl status db_es_api.service 
 sudo systemctl stop db_es_api.service 
