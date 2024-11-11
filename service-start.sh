@@ -27,5 +27,6 @@ fi
 # nohup $SCRIPTDIR/service-start.sh &> /dev/null &
 
 # gunicorn -k uvicorn.workers.UvicornWorker main:app --bind 0.0.0.0:8002 --workers 4
+# gunicorn -k uvicorn.workers.UvicornWorker main:app --bind 0.0.0.0:8002 --workers 4 --timemot 120
 python -m uvicorn main:app --reload --host=0.0.0.0 --port=8002 --workers 1
 # poetry run uvicorn main:app --reload --host=0.0.0.0 --port=8001 --workers 4
