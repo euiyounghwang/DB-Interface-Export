@@ -26,6 +26,5 @@ fi
 #  sudo netstat -nlp | grep :8002
 # nohup $SCRIPTDIR/service-start.sh &> /dev/null &
 
-# python -m uvicorn main:app --reload --host=0.0.0.0 --port=8002 --workers 4
-gunicorn -k uvicorn.workers.UvicornWorker main:app --bind 0.0.0.0:8002 --workers 4
+python -m uvicorn main:app --reload --host=0.0.0.0 --port=8002 --workers 4
 # poetry run uvicorn main:app --reload --host=0.0.0.0 --port=8001 --workers 4
