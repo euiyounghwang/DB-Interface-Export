@@ -30,7 +30,13 @@ async def get_db_query(es_url="http://localhost:9200"):
     return {}
 '''
 
-@app.post("/get_db_query", description="db_query_execute", summary="db_query_execute")
+@app.post("/get_db_query", 
+          responses={
+            200: {"description" : "OK"},
+            500 :{"description" : "Unexpected error"}
+          },
+          description="db_query_execute", 
+          summary="db_query_execute")
 async def get_db_query(request: DB):
     ''' Search to DB with SQL '''
     '''
